@@ -25,6 +25,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         manejador.delegate = self
         manejador.desiredAccuracy = kCLLocationAccuracyBest
         manejador.distanceFilter = 50.0
+        mapa.userTrackingMode = MKUserTrackingMode.Follow
         manejador.requestWhenInUseAuthorization()
         
     }
@@ -48,12 +49,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         punto.latitude = latitud
         punto.longitude = longitud
         
-        var region = MKCoordinateRegion()
+        /*var region = MKCoordinateRegion()
         region.center = punto;
         region.span.latitudeDelta = 0.014
         region.span.longitudeDelta = 0.014
         
-        mapa.setRegion(region, animated: true)
+        mapa.setRegion(region, animated: true)*/
         
         let pin = MKPointAnnotation()
         pin.title = "(\(latitud), \(longitud))"
